@@ -69,34 +69,34 @@ const HomePage = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container-custom text-center text-white">
+        <div className="relative z-10 container-custom text-center text-white px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-4 sm:mb-6 leading-tight">
               Major Idris
             </h1>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-semibold mb-4 text-gradient">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-heading font-semibold mb-3 sm:mb-4 text-gradient leading-tight">
               Championing Health, Community & Progress for Nyali
             </h2>
-            <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed px-2">
               Join us in building a better future for Nyali through healthcare access, 
               youth empowerment, infrastructure development, and transparent governance.
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/about" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
+              <Link href="/about" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 text-center">
                 Learn More
-                <ArrowRight className="ml-2 inline-block" size={20} />
+                <ArrowRight className="ml-2 inline-block" size={18} />
               </Link>
-              <Link href="/contact" className="bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-lg px-8 py-4">
+              <Link href="/contact" className="w-full sm:w-auto bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 text-center">
                 Join Our Movement
               </Link>
-              <Link href="/walk-movement" className="border-2 border-white text-white hover:bg-white hover:text-orange-500 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 text-lg px-8 py-4">
+              <Link href="/walk-movement" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-orange-500 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 text-center">
                 The Walk Movement
               </Link>
             </div>
@@ -125,13 +125,13 @@ const HomePage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-orange-500 text-white">
+      <section className="py-12 sm:py-16 bg-orange-500 text-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -139,10 +139,10 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center px-2"
               >
-                <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
-                <div className="text-sm md:text-base text-primary-100">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">{stat.number}</div>
+                <div className="text-xs sm:text-sm md:text-base text-primary-100 leading-tight">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -152,15 +152,15 @@ const HomePage = () => {
       {/* About Major Idris Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Image Section */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative order-2 lg:order-1"
             >
-              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-80 sm:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1758031167/Major_idris_e1cqdn.jpg"
                   alt="Major Idris - Community Leader"
@@ -176,10 +176,10 @@ const HomePage = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -bottom-6 -right-6 bg-orange-500 text-white p-6 rounded-2xl shadow-xl"
+                className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-orange-500 text-white p-4 sm:p-6 rounded-2xl shadow-xl"
               >
-                <div className="text-2xl font-bold">15+</div>
-                <div className="text-sm">Years of Service</div>
+                <div className="text-xl sm:text-2xl font-bold">15+</div>
+                <div className="text-xs sm:text-sm">Years of Service</div>
               </motion.div>
             </motion.div>
 
@@ -188,40 +188,40 @@ const HomePage = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6 order-1 lg:order-2"
             >
               <div>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-gray-900">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-4 sm:mb-6 text-gray-900">
                   About Major Idris
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-primary-500 rounded-full mb-6"></div>
+                <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-orange-500 to-primary-500 rounded-full mb-4 sm:mb-6"></div>
               </div>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 Major Idris is a dedicated community leader and advocate for positive change in Nyali constituency. 
                 With over 15 years of service to the community, he has consistently worked to improve the lives 
                 of residents through healthcare access, youth empowerment, and infrastructure development.
               </p>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 His vision of "Championing Health, Community & Progress for Nyali" drives every initiative he undertakes. 
                 Through The Walk Movement, Major Idris has mobilized thousands of community members to work together 
                 towards a common goal of sustainable development and transparent governance.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-4 sm:pt-6">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="flex items-center space-x-4"
+                  className="flex items-center space-x-3 sm:space-x-4"
                 >
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                    <Heart className="text-orange-500" size={24} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Heart className="text-orange-500" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Healthcare Advocate</h4>
-                    <p className="text-sm text-gray-600">Free medical camps & health access</p>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Healthcare Advocate</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Free medical camps & health access</p>
                   </div>
                 </motion.div>
 
@@ -229,14 +229,14 @@ const HomePage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
-                  className="flex items-center space-x-4"
+                  className="flex items-center space-x-3 sm:space-x-4"
                 >
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                    <Users className="text-primary-500" size={24} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Users className="text-primary-500" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Youth Champion</h4>
-                    <p className="text-sm text-gray-600">Skills training & empowerment</p>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Youth Champion</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Skills training & empowerment</p>
                   </div>
                 </motion.div>
 
@@ -244,14 +244,14 @@ const HomePage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
-                  className="flex items-center space-x-4"
+                  className="flex items-center space-x-3 sm:space-x-4"
                 >
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                    <Wrench className="text-orange-500" size={24} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Wrench className="text-orange-500" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Infrastructure Builder</h4>
-                    <p className="text-sm text-gray-600">Roads, schools & community facilities</p>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Infrastructure Builder</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Roads, schools & community facilities</p>
                   </div>
                 </motion.div>
 
@@ -259,14 +259,14 @@ const HomePage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
-                  className="flex items-center space-x-4"
+                  className="flex items-center space-x-3 sm:space-x-4"
                 >
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                    <Shield className="text-primary-500" size={24} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Shield className="text-primary-500" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Transparent Leader</h4>
-                    <p className="text-sm text-gray-600">Accountable & people-centered governance</p>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Transparent Leader</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Accountable & people-centered governance</p>
                   </div>
                 </motion.div>
               </div>
@@ -275,11 +275,11 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="pt-6"
+                className="pt-4 sm:pt-6"
               >
-                <Link href="/about" className="inline-flex items-center bg-gradient-to-r from-orange-500 to-primary-500 text-white font-semibold py-3 px-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                <Link href="/about" className="inline-flex items-center bg-gradient-to-r from-orange-500 to-primary-500 text-white font-semibold py-3 px-6 sm:px-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
                   Learn More About Major Idris
-                  <ArrowRight className="ml-2" size={20} />
+                  <ArrowRight className="ml-2" size={18} />
                 </Link>
               </motion.div>
             </motion.div>

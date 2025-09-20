@@ -40,15 +40,15 @@ const Header = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-3 sm:py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1757747145/Major_Idris_umab7k.png"
               alt="Major Idris Logo"
-              width={60}
-              height={60}
-              className="rounded-full"
+              width={50}
+              height={50}
+              className="rounded-full sm:w-[60px] sm:h-[60px]"
             />
           </Link>
 
@@ -87,7 +87,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-white/20 transition-colors text-white"
+            className="lg:hidden p-2 rounded-lg hover:bg-white/20 transition-colors text-white touch-manipulation"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -104,7 +104,7 @@ const Header = () => {
               transition={{ duration: 0.3 }}
               className="lg:hidden bg-primary-500 border-t border-primary-400"
             >
-              <nav className="py-4 space-y-2">
+              <nav className="py-4 space-y-1">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.name}
@@ -114,7 +114,7 @@ const Header = () => {
                   >
                     <Link
                       href={item.href}
-                      className="block px-4 py-3 text-white hover:text-orange-200 hover:bg-white/10 transition-colors"
+                      className="block px-4 py-3 text-white hover:text-orange-200 hover:bg-white/10 transition-colors text-base font-medium"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
@@ -123,20 +123,20 @@ const Header = () => {
                 ))}
                 
                 {/* Mobile Contact Info */}
-                <div className="px-4 py-3 border-t border-primary-400 space-y-2">
+                <div className="px-4 py-4 border-t border-primary-400 space-y-3">
                   <a
                     href="tel:+254729880056"
-                    className="flex items-center space-x-2 text-white hover:text-orange-200 transition-colors"
+                    className="flex items-center space-x-3 text-white hover:text-orange-200 transition-colors py-2"
                   >
-                    <Phone size={16} />
-                    <span>+254 729 880 056</span>
+                    <Phone size={18} />
+                    <span className="text-base">+254 729 880 056</span>
                   </a>
                   <a
                     href="mailto:info@majoridris.com"
-                    className="flex items-center space-x-2 text-white hover:text-orange-200 transition-colors"
+                    className="flex items-center space-x-3 text-white hover:text-orange-200 transition-colors py-2"
                   >
-                    <Mail size={16} />
-                    <span>info@majoridris.com</span>
+                    <Mail size={18} />
+                    <span className="text-base">info@majoridris.com</span>
                   </a>
                 </div>
               </nav>

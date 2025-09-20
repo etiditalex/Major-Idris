@@ -34,11 +34,11 @@
   }
   
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-12 px-4 sm:py-16 sm:px-6 lg:px-8;
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .text-gradient {
@@ -51,6 +51,43 @@
   
   .input-field {
     @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300;
+  }
+  
+  /* Mobile-specific optimizations */
+  .mobile-text-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .mobile-text-lg {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+  
+  .mobile-text-xl {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  
+  .mobile-text-2xl {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+  
+  .mobile-text-3xl {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+  }
+  
+  .mobile-text-4xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl;
+  }
+  
+  .mobile-padding {
+    @apply px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16;
+  }
+  
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+  }
+  
+  .mobile-flex-col {
+    @apply flex flex-col sm:flex-row gap-4 sm:gap-6;
   }
 }
 
