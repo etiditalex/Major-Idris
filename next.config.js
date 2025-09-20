@@ -5,8 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/major-idris-website' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/major-idris-website' : ''
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Major-Idris' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/Major-Idris' : ''
 }
 
 module.exports = nextConfig
