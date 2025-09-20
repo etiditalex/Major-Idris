@@ -46,8 +46,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        'heading': ['Playfair Display', 'serif'],
-        'body': ['Inter', 'sans-serif'],
+        'heading': ['Poppins', 'sans-serif'],
+        'body': ['Poppins', 'sans-serif'],
+        'sans': ['Poppins', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
