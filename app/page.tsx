@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Users, Heart, Wrench, Shield, Leaf, TrendingUp } from 'lucide-react'
+import NewsUpdates from '@/components/NewsUpdates'
 
 const HomePage = () => {
   const stats = [
@@ -528,33 +529,8 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="section-padding bg-gradient-to-r from-orange-500 to-primary-500 text-white">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-              Ready to Make a Difference?
-            </h2>
-            <p className="text-lg mb-8 text-white/90 leading-relaxed">
-              Join thousands of Nyali residents who are already part of our movement for positive change. 
-              Together, we can build a better future for our community.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
-                Get Involved
-              </Link>
-              <Link href="/news" className="border-2 border-white text-white hover:bg-white hover:text-primary-500 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
-                Read Our News
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Real-time News Updates Section */}
+      <NewsUpdates />
     </div>
   )
 }
