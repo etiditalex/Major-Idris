@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { Heart, Users, Wrench, Shield, Leaf, Target, ArrowRight } from 'lucide-react'
 
 const VisionPage = () => {
@@ -316,18 +317,18 @@ const VisionPage = () => {
               of sustainable development and community prosperity for the entire region.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
+              <Link
                 href="/contact"
                 className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Get Involved
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/walk-movement"
                 className="border-2 border-white text-white hover:bg-white hover:text-primary-500 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Learn About The Walk Movement
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

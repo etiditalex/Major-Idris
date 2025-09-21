@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -263,18 +264,18 @@ const GalleryPage = () => {
               Your participation helps us build a better future for Nyali.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
+              <Link
                 href="/contact"
                 className="btn-primary text-lg px-8 py-4"
               >
                 Get Involved
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/walk-movement"
                 className="btn-outline text-lg px-8 py-4"
               >
                 Learn About The Walk Movement
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

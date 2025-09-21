@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Users, Heart, Target, Globe, Award, TrendingUp, ArrowRight, CheckCircle } from 'lucide-react'
 
 const WalkMovementPage = () => {
@@ -418,18 +419,18 @@ const WalkMovementPage = () => {
               sustainable development, and people-centered governance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
+              <Link
                 href="/contact"
                 className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Get Involved
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/gallery"
                 className="border-2 border-white text-white hover:bg-white hover:text-primary-500 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 See Our Work
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
