@@ -175,13 +175,18 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               © {currentYear} Major Idris. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="text-gray-400 hover:text-primary-400 transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-primary-400 transition-colors">
-                Terms of Service
-              </Link>
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+              <p className="text-gray-400 text-sm">
+                Built by Alex Etidit for the Love of Nyali ❤️
+              </p>
+              <div className="flex space-x-6 text-sm">
+                <Link href="/privacy" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link href="/terms" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  Terms of Service
+                </Link>
+              </div>
             </div>
           </div>
         </motion.div>
