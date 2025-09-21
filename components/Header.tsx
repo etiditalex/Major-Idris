@@ -4,11 +4,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Phone, Mail } from 'lucide-react'
+import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +21,15 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { 
+      name: 'About Us', 
+      href: '/about',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'About Major Idris', href: '/about' },
+        { name: 'My Autobiography', href: '/autobiography' }
+      ]
+    },
     { name: 'Vision', href: '/vision' },
     { name: 'The Walk Movement', href: '/walk-movement' },
     { name: 'Gallery', href: '/gallery' },
@@ -55,14 +64,53 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-white hover:text-orange-200 font-medium transition-colors duration-300 relative group"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </Link>
+              <div key={item.name} className="relative group">
+                {item.hasDropdown ? (
+                  <div
+                    className="text-white hover:text-orange-200 font-medium transition-colors duration-300 cursor-pointer flex items-center space-x-1"
+                    onMouseEnter={() => setIsAboutDropdownOpen(true)}
+                    onMouseLeave={() => setIsAboutDropdownOpen(false)}
+                  >
+                    <span>{item.name}</span>
+                    <ChevronDown size={16} className={`transition-transform duration-300 ${isAboutDropdownOpen ? 'rotate-180' : ''}`} />
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="text-white hover:text-orange-200 font-medium transition-colors duration-300 relative group"
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                )}
+                
+                {/* Dropdown Menu */}
+                {item.hasDropdown && (
+                  <AnimatePresence>
+                    {isAboutDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50"
+                        onMouseEnter={() => setIsAboutDropdownOpen(true)}
+                        onMouseLeave={() => setIsAboutDropdownOpen(false)}
+                      >
+                        {item.dropdownItems?.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.name}
+                            href={dropdownItem.href}
+                            className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200"
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
             ))}
           </nav>
 
@@ -112,13 +160,31 @@ const Header = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <Link
-                      href={item.href}
-                      className="block px-4 py-3 text-white hover:text-orange-200 hover:bg-white/10 transition-colors text-base font-medium"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
+                    {item.hasDropdown ? (
+                      <div className="px-4 py-3">
+                        <div className="text-white font-medium mb-2">{item.name}</div>
+                        <div className="ml-4 space-y-1">
+                          {item.dropdownItems?.map((dropdownItem, dropdownIndex) => (
+                            <Link
+                              key={dropdownItem.name}
+                              href={dropdownItem.href}
+                              className="block px-4 py-2 text-white/80 hover:text-orange-200 hover:bg-white/10 transition-colors text-sm rounded-lg"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {dropdownItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="block px-4 py-3 text-white hover:text-orange-200 hover:bg-white/10 transition-colors text-base font-medium"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
                 
